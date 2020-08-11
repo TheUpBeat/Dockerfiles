@@ -8,6 +8,8 @@
 docker build -t neofetch .
 ```
 
+## Run
+
 * To run the Docker image
 
 ```
