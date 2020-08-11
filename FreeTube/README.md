@@ -11,10 +11,11 @@ docker build -t freetube .
 * To run the Docker image
 
 ```
-docker run --rm\
+docker run -d --rm --ipc=host \
 	-e DISPLAY=unix$DISPLAY \
 	--volume=/tmp/.X11-unix:/tmp/.X11-unix \
 	--volume="$HOME/.Xauthority:/root/.Xauthority:rw" \
+	-v /dev/shm:/dev/shm \
 	--net=host \
         --device=/dev/dri \
 	--device /dev/snd \
