@@ -20,7 +20,12 @@
 
 * There are not much libraries required to install the Docker. 
 
-Note: As I use Void Linux, the following post will be according to it.
+---
+**NOTE**
+
+As I use Void Linux, the following post will be according to it.
+
+---
 
 * Install docker
 
