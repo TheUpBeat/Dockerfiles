@@ -1,6 +1,6 @@
 # Dockerfiles
 
-This repo contains the different dockerfiles that I create for personal/profession use.
+This repo contains the different dockerfiles that I create for personal/professional use.
 
 ## For GUIs
 
@@ -77,4 +77,17 @@ To get back to original state
 
 ```
 xhost -"local:docker@"
+```
+
+## Routing Docker traffic through VPN
+
+Assuming that a container of the preferred VPN is running with the name `vpn`. For example, see [Mullvad VPN](https://hub.docker.com/r/xeroxmalf/mullvadvpn)
+
+```
+docker run --rm \
+      -e DISPLAY=$DISPLAY \
+      --volume="$HOME/.Xauthority:/root/.Xauthority:rw" \
+       -v /tmp/.X11-unix/:/tmp/.X11-unix \
+      --net=container:vpn \
+      <dockerimage_name>
 ```
