@@ -31,7 +31,7 @@ RUN apt-get update && \
         pulseaudio \
         && rm -rf /var/lib/apt/lists/*
 
-RUN useradd $HOME freetube \
+RUN useradd freetube \
         && chown -R freetube:freetube $HOME \
         && usermod -a -G audio,video freetube
 
