@@ -29,3 +29,9 @@ docker run -d --rm --ipc=host \
 	--group-add (getent group audio | cut -d: -f3) \
 	freetube
 ```
+
+* If faced with an error `Gtk-WARNING: cannot open display: unix:0`
+
+```
+run xhost +"local:docker@"
+```
