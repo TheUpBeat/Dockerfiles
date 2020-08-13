@@ -11,7 +11,7 @@ docker build --build-arg user=$USER --build-arg uid=$(id -u) --build-arg gid=$(i
 To run the Docker image
 
 ```
-docker run --rm --ipc=host \
+docker run -d --rm --ipc=host \
 	-e DISPLAY=$DISPLAY \
         --volume=/tmp/.X11-unix:/tmp/.X11-unix \
 	--volume="$HOME/.Xauthority:/root/.Xauthority:rw" \
